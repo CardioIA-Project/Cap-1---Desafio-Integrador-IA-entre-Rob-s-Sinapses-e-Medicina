@@ -1,0 +1,30 @@
+Frase: Sinto uma dor forte no peito, como um aperto, que começou hoje cedo e irradia para o braço esquerdo.
+Diagnóstico: Não consegui identificar sintomas. Por favor, descreva melhor.
+
+Frase: Há três dias estou com muita falta de ar, principalmente quando tento subir escadas ou caminhar rápido.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Angina Instável (similaridade: 0.33)
+
+Frase: Percebi um inchaço incomum nos meus tornozelos nas últimas duas semanas, o que dificulta até para calçar os sapatos.
+Diagnóstico: Não consegui identificar sintomas. Por favor, descreva melhor.
+
+Frase: Sinto palpitações e o coração acelerado desde ontem à noite, mesmo quando estou sentado descansando.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Taquiarritmia (similaridade: 0.33)
+
+Frase: Estou com uma fadiga extrema há dez dias e não consigo mais ter ânimo para realizar minhas tarefas domésticas.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Insuficiência Cardíaca Aguda (similaridade: 0.33)
+
+Frase: Sinto uma tontura persistente e visão turva ao me levantar rapidamente, o que me deixa com medo de cair.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Bradiarritmia / Bloqueio (similaridade: 0.33)
+
+Frase: Tenho sentido um desconforto no tórax acompanhado de náuseas e suor frio desde o início da manhã.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Infarto Agudo do Miocárdio (similaridade: 0.33)
+
+Frase: Há uma semana sofro com tosse seca persistente que piora muito durante a noite e atrapalha meu sono.
+Diagnóstico: Não consegui identificar sintomas. Por favor, descreva melhor.
+
+Frase: Sinto um peso nas pernas e cansaço constante há um mês, o que me impede de fazer minhas caminhadas diárias.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Insuficiência Cardíaca Aguda (similaridade: 0.33)
+
+Frase: Comecei com uma dor súbita na região das costas e falta de ar moderada após um período de estresse no trabalho.
+Diagnóstico: Com base nos sintomas, o diagnóstico mais provável é: Angina Instável (similaridade: 0.33)
+
