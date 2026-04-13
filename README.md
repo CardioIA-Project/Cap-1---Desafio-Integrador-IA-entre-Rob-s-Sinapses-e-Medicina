@@ -73,6 +73,36 @@ A plataforma não demanda instalações complexas. Apenas garanta que as ferrame
      npm run dev
      ```
    - O aplicativo estará acessível no seu navegador, geralmente no endereço `http://localhost:5173`.
+  
+4. **Iniciando o serviço (backend):**
+   - Abra o terminal de sua preferência.
+   - Navegue até a pasta do projeto:
+     ```bash
+     cd cardioia-app
+     ```
+   - Instale as dependências (necessário apenas na primeira vez):
+     ```bash
+     npm install
+     ```
+   - Inicie o serviço:
+     ```bash
+     npm run server
+     ```
+   - O backend ficará disponível localmente, geralmente em http://localhost:3000 (ou na porta configurada no src/services/server.js).
+  
+## 🖼️ Imagens da aplicação
+   ### Tela de Login
+   ![cardioia_login](https://github.com/user-attachments/assets/379ae47d-06ac-4021-9691-73c130fc9b36)
+   ---
+   ### Dashboard
+   ![cardioia_dashboard](https://github.com/user-attachments/assets/88068a83-ae0e-49d4-b943-5d3ed9686e56)
+   ---
+   ### Pacientes
+   ![cardioia_pacientes](https://github.com/user-attachments/assets/e7e0a8a2-9d02-406a-8d61-49a6a91f1413)
+   ---
+   ### Agendamentos
+   ![cardioia_agendamentos](https://github.com/user-attachments/assets/10ad198c-bc08-48f5-88c3-0750b389dc79)
+-----
 
 ## 🗃 Histórico de lançamentos
 
