@@ -1,0 +1,565 @@
+:global(:root) {
+  --bg: #f7f9fc;
+  --card: #ffffff;
+  --text: #3f4a5a;
+  --text-strong: #111827;
+  --muted: #64748b;
+  --border: #e2e8f0;
+  --shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+  --font: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.loginPage {
+  min-height: calc(100vh - 48px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginCard {
+  width: min(420px, 100%);
+  padding: 36px 28px;
+  border-radius: 28px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.loginCard h1 {
+  margin: 0 0 12px;
+  font-size: 25px;
+  color: var(--text-strong);
+}
+
+.loginCard p {
+  margin: 0 0 24px;
+  color: var(--muted);
+}
+
+.loginLogo {
+  width: 90px;
+  height: 90px;
+}
+
+.loginForm {
+  display: grid;
+  gap: 16px;
+}
+
+.primaryButton {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 16px;
+  background: #2563eb;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 160ms ease;
+}
+
+.primaryButton:hover {
+  background: #1d4ed8;
+}
+
+.errorMessage {
+  margin: 0;
+  padding: 20px;
+  border-radius: 18px;
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.appShell {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.appHeader {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 24px 28px;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.appBrand {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 6px;
+}
+
+.appBrand span {
+  font-size: 17px;
+}
+
+.appLogo {
+  width: 54px;
+  height: 54px;
+}
+
+.appBrand img {
+  width: 54px;
+  height: 54px;
+}
+
+.appNav {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--muted);
+  padding: 12px 18px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 160ms ease;
+}
+
+.active {
+  color: #111827;
+  background: #eff6ff;
+  border-color: #bfdbfe;
+}
+
+.appHeaderControls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+}
+
+.userPanel {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--text-strong);
+}
+
+.secondaryButton {
+  padding: 12px 18px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-strong);
+  cursor: pointer;
+  transition: background 160ms ease, border-color 160ms ease;
+}
+
+.secondaryButton:hover {
+  border-color: #cbd5e1;
+  background: #f8fafc;
+}
+
+.appContent {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.dashboardPage,
+.patientsPage,
+.appointmentsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pageHeader {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 24px;
+  padding: 30px 32px;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.pageHeader h1 {
+  color: var(--text-strong);
+  text-align: left;
+  font-size: 37px;
+  margin: 0 0 15px;
+}
+
+.pageHeader p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.dashboardCards,
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.dashboardCard,
+.summaryCards article {
+  padding: 20px 22px;
+  border-radius: 18px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.05);
+  text-align: left;
+}
+
+.dashboardCard small,
+.summaryLabel {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.dashboardCard strong,
+.summaryCards strong {
+  display: block;
+  font-size: 30px;
+  color: var(--text-strong);
+}
+
+.dashboardChartCard {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+}
+
+.dashboardChartHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.dashboardChartHeader h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-strong);
+}
+
+.dashboardChartHeader span {
+  color: var(--muted);
+}
+
+.chartWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+}
+
+.chartSvg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.chartTooltip {
+  position: absolute;
+  pointer-events: none;
+  transform: translate(-50%, -100%);
+  padding: 14px 16px;
+  border-radius: 18px;
+  background: rgba(31, 41, 55, 0.92);
+  color: #f8fafc;
+  min-width: 160px;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, 0.24);
+  transition: opacity 120ms ease, transform 120ms ease;
+  z-index: 10;
+}
+
+.tooltipHeader {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  color: #f8fafc;
+}
+
+.tooltipItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #e2e8f0;
+}
+
+.tooltipItem:last-child {
+  margin-bottom: 0;
+}
+
+.tooltipMarker {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 8px;
+}
+
+.tooltipItem strong {
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.chartLegend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin: 20px 50px;
+}
+
+.legendItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+}
+
+.legendMarker {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+}
+
+.legendItem .label {
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.monthsRow {
+  display: flex;
+  gap: 10px;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  color: var(--muted);
+  font-size: 13px;
+  margin: 0 50px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  overflow-x: auto;
+}
+
+.monthsRow span {
+  text-align: center;
+  white-space: nowrap;
+  min-width: min-content;
+}
+
+.tableCard {
+  padding: 24px;
+  border-radius: 24px;
+  background: var(--card);
+  box-shadow: var(--shadow);
+}
+
+.summaryCards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.appointmentForm h2,
+.appointmentsList h2 {
+  margin: 0 0 18px;
+  font-size: 22px;
+  color: var(--text-strong);
+}
+
+.appointmentForm form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.formRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.appointmentCards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.appointmentCard {
+  padding: 18px 20px;
+  border-radius: 20px;
+  border: 1px solid var(--border);
+  background: #f8fafc;
+}
+
+.appointmentHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.appointmentHeader strong {
+  font-size: 18px;
+  color: var(--text-strong);
+}
+
+.appointmentHeader span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.appointmentMeta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.tableHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.tableHeader h2 {
+  margin: 0;
+  font-size: 22px;
+  color: var(--text-strong);
+}
+
+.tableHeader span {
+  color: var(--muted);
+}
+
+.patientsTableWrapper {
+  overflow-x: auto;
+}
+
+.patientsTable {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 760px;
+}
+
+.patientsTable th,
+.patientsTable td {
+  padding: 18px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+}
+
+.patientsTable th {
+  color: var(--muted);
+  font-size: 12px;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.patientsTable tbody tr:hover {
+  background: #f8fafc;
+}
+
+.patientsTable tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.patientsTable td {
+  color: var(--text-strong);
+  font-size: 15px;
+}
+
+.heartCell {
+  color: #dc2626;
+  font-weight: 600;
+}
+
+.heartCell span {
+  margin-right: 8px;
+}
+
+.riskBadge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.medium {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.appointmentsPage {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.scheduleGrid {
+  display: grid;
+  grid-template-columns: minmax(280px, 420px) minmax(320px, 1fr);
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .pageHeader,
+  .tableCard,
+  .summaryCards {
+    padding: 18px;
+  }
+
+  .summaryCards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .scheduleGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .patientsTable {
+    min-width: auto;
+  }
+}

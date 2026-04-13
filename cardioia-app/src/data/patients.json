@@ -1,0 +1,98 @@
+[
+  {
+    "id": 1,
+    "name": "Ana Silva",
+    "age": 42,
+    "condition": "Hipertensão",
+    "lastVisit": "2026-04-05",
+    "fc": 92
+  },
+  {
+    "id": 2,
+    "name": "Bruno Costa",
+    "age": 55,
+    "condition": "Arritmia",
+    "lastVisit": "2026-04-09",
+    "fc": 88
+  },
+  {
+    "id": 3,
+    "name": "Carla Pereira",
+    "age": 33,
+    "condition": "Monitoramento",
+    "lastVisit": "2026-04-10",
+    "fc": 76
+  },
+  {
+    "id": 4,
+    "name": "Diego Santos",
+    "age": 60,
+    "condition": "Insuficiência Cardíaca",
+    "lastVisit": "2026-04-07",
+    "fc": 98
+  },
+  {
+    "id": 5,
+    "name": "Elisa Rocha",
+    "age": 47,
+    "condition": "Colesterol Alto",
+    "lastVisit": "2026-04-12",
+    "fc": 82
+  },
+  {
+    "id": 6,
+    "name": "Fernando Almeida",
+    "age": 38,
+    "condition": "Diabetes",
+    "lastVisit": "2026-04-02",
+    "fc": 74
+  },
+  {
+    "id": 7,
+    "name": "Gabriela Souza",
+    "age": 29,
+    "condition": "Taquicardia",
+    "lastVisit": "2026-04-11",
+    "fc": 105
+  },
+  {
+    "id": 8,
+    "name": "Henrique Oliveira",
+    "age": 67,
+    "condition": "Pós-Operatório",
+    "lastVisit": "2026-04-01",
+    "fc": 72
+  },
+  {
+    "id": 9,
+    "name": "Isabel Lima",
+    "age": 52,
+    "condition": "Hipertensão",
+    "lastVisit": "2026-04-13",
+    "fc": 85
+  },
+  {
+    "id": 10,
+    "name": "João Mendes",
+    "age": 41,
+    "condition": "Monitoramento",
+    "lastVisit": "2026-04-08",
+    "fc": 78
+  },
+  {
+    "id": 11,
+    "name": "Lúcia Ferreira",
+    "age": 73,
+    "condition": "Angina",
+    "lastVisit": "2026-04-06",
+    "fc": 90
+  },
+  {
+    "id": 12,
+    "name": "Marcos Vinícius",
+    "age": 35,
+    "condition": "Sopro Cardíaco",
+    "lastVisit": "2026-04-12",
+    "fc": 68
+  }
+]

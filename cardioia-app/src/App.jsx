@@ -1,120 +1,142 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
+import { useState, useContext } from 'react'
+import Dashboard from './pages/dashboard.jsx'
+import Pacientes from './pages/pacientes.jsx'
+import Agendamentos from './pages/agendamentos.jsx'
 import './App.css'
+import styles from './App.module.css'
+import { AuthProvider, AuthContext } from './context/AuthContext.jsx'
 
-function App() {
-  const [count, setCount] = useState(0)
+const PAGES = [
+  { id: 'dashboard', label: 'Dashboard' },
+  { id: 'pacientes', label: 'Pacientes' },
+  { id: 'agendamentos', label: 'Agendamentos' },
+]
+
+function LoginPage() {
+  const { login } = useContext(AuthContext)
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    if (!email || !password) {
+      setError('Preencha email e senha para entrar.')
+      return
+    }
+
+    try {
+      login({ email, senha: password })
+    } catch (err) {
+      setError(err.message)
+    }
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <main className={styles.loginPage}>
+      <div className={styles.loginCard}>
+        <img src="/icon_logo.png" alt="Logo CardioIA" className={styles.loginLogo} />
+        <h1>Faça login para acessar o sistema CardioIA</h1>
 
-      <div className="ticks"></div>
+        <form onSubmit={handleSubmit} className={styles.loginForm}>
+          <label htmlFor="email">Email</label>
+          <input
+            id="email"
+            type="email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            placeholder="seu@email.com"
+          />
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <label htmlFor="password">Senha</label>
+          <input
+            id="password"
+            type="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="••••••••"
+          />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          {error && <p className={styles.errorMessage}>{error}</p>}
+
+          <button type="submit" className={styles.primaryButton}>
+            Entrar
+          </button>
+        </form>
+      </div>
+    </main>
+  )
+}
+
+function ProtectedArea({ children }) {
+  const { usuario } = useContext(AuthContext)
+
+  if (!usuario) {
+    return <LoginPage />
+  }
+
+  return <>{children}</>
+}
+
+function AuthenticatedApp() {
+  const [activePage, setActivePage] = useState('dashboard')
+  const { logout, usuario } = useContext(AuthContext)
+
+  const renderPage = () => {
+    switch (activePage) {
+      case 'pacientes':
+        return <Pacientes />
+      case 'agendamentos':
+        return <Agendamentos />
+      case 'dashboard':
+      default:
+        return <Dashboard />
+    }
+  }
+
+  return (
+    <div className={styles.appShell}>
+      <header className={styles.appHeader}>
+        <div className={styles.appBrand}>
+          <img src="/icon_logo.png" alt="Logo CardioIA" className={styles.appLogo} />
+          <span className={styles.brand}>CardioIA</span>
+        </div>
+
+        <div className={styles.appHeaderControls}>
+          <nav className={styles.appNav}>
+            {PAGES.map((page) => (
+              <button
+                key={page.id}
+                type="button"
+                className={`${styles.tab} ${page.id === activePage ? styles.active : ''}`}
+                onClick={() => setActivePage(page.id)}
+              >
+                {page.label}
+              </button>
+            ))}
+          </nav>
+
+          <div className={styles.userPanel}>
+            <span>Olá, {usuario?.nome}</span>
+            <button type="button" className={styles.secondaryButton} onClick={logout}>
+              Sair
+            </button>
+          </div>
+        </div>
+      </header>
+
+      <main className={styles.appContent}>{renderPage()}</main>
+    </div>
+  )
+}
+
+function App() {
+  return (
+    <AuthProvider>
+      <ProtectedArea>
+        <AuthenticatedApp />
+      </ProtectedArea>
+    </AuthProvider>
   )
 }
 

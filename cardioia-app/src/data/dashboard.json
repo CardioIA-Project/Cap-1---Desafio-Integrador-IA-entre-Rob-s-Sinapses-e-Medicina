@@ -1,0 +1,18 @@
+{
+  "totalPatients": 12,
+  "highRiskRate": 42,
+  "monthlyData": [
+    { "label": "Jan", "pacientes": 10, "consultas": 12 },
+    { "label": "Fev", "pacientes": 11, "consultas": 13 },
+    { "label": "Mar", "pacientes": 12, "consultas": 14 },
+    { "label": "Abr", "pacientes": 12, "consultas": 16 },
+    { "label": "Mai", "pacientes": 11, "consultas": 13 },
+    { "label": "Jun", "pacientes": 12, "consultas": 15 },
+    { "label": "Jul", "pacientes": 10, "consultas": 12 },
+    { "label": "Ago", "pacientes": 11, "consultas": 13 },
+    { "label": "Set", "pacientes": 12, "consultas": 16 },
+    { "label": "Out", "pacientes": 11, "consultas": 14 },
+    { "label": "Nov", "pacientes": 10, "consultas": 12 },
+    { "label": "Dez", "pacientes": 12, "consultas": 13 }
+  ]
+}
