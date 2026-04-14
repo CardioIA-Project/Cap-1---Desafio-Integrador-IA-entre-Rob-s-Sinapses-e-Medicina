@@ -27,6 +27,10 @@ O projeto **CardioIA** consiste em um sistema em Python focado em um Desafio Int
 
 Juntamente com os algoritmos de identificação e processamento do Python, o projeto conta também com notebooks que exploram a modelagem e análise de dados, bases e datasets auxiliares, além de uma aplicação Front-end estática focada na experiência do usuário e interface interativa.
 
+## 📺 Video demonstrativo
+
+https://www.youtube.com/watch?v=RjUqt1bST_k
+
 ## 📁 Estrutura de pastas
 
 Dentre os arquivos e pastas presentes na raiz do projeto, definem-se:
